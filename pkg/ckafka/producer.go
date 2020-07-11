@@ -1,9 +1,12 @@
 package ckafka
 
-import "context"
+import (
+	"context"
+	"github.com/segmentio/kafka-go"
+)
 
 
-func producer(borkers []string, topic string, dialer *kafka.Dialer, key []byte, value []byte) (err error) {
+func Producer(borkers []string, topic string, dialer *kafka.Dialer, key []byte, value []byte) (err error) {
 	w := kafka.NewWriter(kafka.WriterConfig{
 		Brokers:  borkers,
 		Topic:    topic,

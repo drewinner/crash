@@ -3,9 +3,10 @@ package ckafka
 import (
 	"context"
 	"fmt"
+	"github.com/segmentio/kafka-go"
 )
 
-func consumer(borkers []string, topic string, groupId string, dialer *kafka.Dialer) {
+func Consumer(borkers []string, topic string, groupId string, dialer *kafka.Dialer) {
 	r := kafka.NewReader(kafka.ReaderConfig{
 		Brokers:  borkers,
 		GroupID:  groupId,
